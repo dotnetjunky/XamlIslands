@@ -5,7 +5,7 @@
 #include "XamlBridge.h"
 #include <ShellScalingApi.h>
 #include <winrt/Microsoft.Toolkit.Win32.UI.XamlHost.h>
-#include <winrt/SampleLibraryCS.h>
+//#include <winrt/SampleLibraryCS.h>
 
 #define MAX_LOADSTRING 100
 
@@ -65,9 +65,9 @@ private:
     wil::unique_hwnd m_hButton2 = nullptr;
     wil::unique_hwnd m_hWndXamlIsland = nullptr;
     wil::unique_hwnd m_hWndXamlButton1 = nullptr;
-    winrt::MyApp::MainUserControl m_mainUserControl = nullptr;
+    //winrt::MyApp::MainUserControl m_mainUserControl = nullptr;
 	winrt::MyApp::TodosFeed m_todosFeed = nullptr;
-    winrt::SampleLibraryCS::CustomUserControl m_managedControl = nullptr;
+    //winrt::SampleLibraryCS::CustomUserControl m_managedControl = nullptr;
     winrt::Windows::UI::Xaml::Controls::Button m_xamlBt1 = nullptr;
     winrt::Windows::UI::Xaml::Controls::Button::Click_revoker m_xamlBt1ClickEventRevoker;
 
@@ -108,10 +108,10 @@ private:
         const auto dpi = static_cast<int>(scaleFactor) / 100.0f;
 
 
-        m_managedControl = winrt::SampleLibraryCS::CustomUserControl();
+    /*    m_managedControl = winrt::SampleLibraryCS::CustomUserControl();
         m_managedControl.Height(ButtonHeight / dpi);
         m_managedControl.Width(ButtonWidth / dpi);
-        m_hWndXamlButton1 = wil::unique_hwnd(CreateDesktopWindowsXamlSource(WS_TABSTOP, m_managedControl));
+        m_hWndXamlButton1 = wil::unique_hwnd(CreateDesktopWindowsXamlSource(WS_TABSTOP, m_managedControl));*/
 
         //m_xamlBt1 = LoadXamlControl<winrt::Windows::UI::Xaml::Controls::Button>(IDR_XAML_BUTTON1);
         //m_xamlBt1.Height(ButtonHeight / dpi);
@@ -146,11 +146,11 @@ private:
             break;
         case IDM_ButtonID1:
         case IDM_ButtonID2:
-            if (m_mainUserControl)
+            /*if (m_mainUserControl)
             {
                 const auto string = (id == IDM_ButtonID1) ? winrt::hstring(L"Native button 1") : winrt::hstring(L"Native button 2");
                 m_mainUserControl.MyProperty(string);
-            }
+            }*/
             break;
         }
     }
@@ -179,10 +179,10 @@ private:
 
     void OnXamlButtonClick(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&)
     {
-		if (m_mainUserControl)
+		/*if (m_mainUserControl)
 		{
 			m_mainUserControl.MyProperty(winrt::hstring(L"Xaml K Button 1"));
-		}
+		}*/
     }
 };
 
@@ -194,7 +194,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    ::MessageBox(NULL, L"Press ENTER to continue", L"Debug", 0);
+    //::MessageBox(NULL, L"Press ENTER to continue", L"Debug", 0);
 
     winrt::init_apartment(winrt::apartment_type::single_threaded);
     winrt::MyApp::App app;

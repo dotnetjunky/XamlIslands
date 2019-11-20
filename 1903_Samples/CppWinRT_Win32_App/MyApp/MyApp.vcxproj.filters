@@ -50,7 +50,6 @@
     <ApplicationDefinition Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainUserControl.xaml" />
     <Page Include="TodosFeed.xaml" />
   </ItemGroup>
 </Project>

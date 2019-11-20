@@ -8,6 +8,13 @@
     xmlns:react="using:react.uwp"
     mc:Ignorable="d">
 
-   <react:ReactControl x:Name="RootElement" />
+   <Grid 
+	  BorderBrush="Blue"
+	  BorderThickness="2">
 
+	  <react:ReactControl   
+		 x:Name="RootElement" />
+
+   </Grid>
+   
 </UserControl>

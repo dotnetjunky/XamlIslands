@@ -131,10 +131,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClInclude>
-    <ClInclude Include="MainUserControl.h">
-      <DependentUpon>MainUserControl.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="TodosFeed.h">
       <DependentUpon>TodosFeed.xaml</DependentUpon>
@@ -147,14 +143,6 @@
     </ApplicationDefinition>
     <ProjectReference Include="..\..\..\..\react-native-windows-samples\samples\TodosFeed\TodosFeed\node_modules\react-native-windows\ReactUWP\ReactUWP.vcxproj">
       <Project>{2d5d43d9-cffc-4c40-b4cd-02efb4e2742b}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleLibraryCS\SampleLibraryCS.csproj">
-      <Project>{92a2ac96-b414-455e-afe3-a6872591db93}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\SampleUserControl\SampleUserControl.vcxproj">
-      <Project>{b6b66dba-c720-4407-b490-6ae3fc2870fc}</Project>
-      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
-      <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -182,10 +170,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
-    <ClCompile Include="MainUserControl.cpp">
-      <DependentUpon>MainUserControl.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -200,19 +184,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
-    <Midl Include="MainUserControl.idl">
-      <DependentUpon>MainUserControl.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Midl>
     <Midl Include="TodosFeed.idl">
       <DependentUpon>TodosFeed.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="TodosFeed.xaml">
       <SubType>Designer</SubType>
     </Page>
