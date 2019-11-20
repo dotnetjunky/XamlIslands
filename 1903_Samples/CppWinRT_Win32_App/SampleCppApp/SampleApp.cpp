@@ -66,6 +66,7 @@ private:
     wil::unique_hwnd m_hWndXamlIsland = nullptr;
     wil::unique_hwnd m_hWndXamlButton1 = nullptr;
     winrt::MyApp::MainUserControl m_mainUserControl = nullptr;
+	winrt::MyApp::TodosFeed m_todosFeed = nullptr;
     winrt::SampleLibraryCS::CustomUserControl m_managedControl = nullptr;
     winrt::Windows::UI::Xaml::Controls::Button m_xamlBt1 = nullptr;
     winrt::Windows::UI::Xaml::Controls::Button::Click_revoker m_xamlBt1ClickEventRevoker;
@@ -118,8 +119,11 @@ private:
         //m_xamlBt1ClickEventRevoker = m_xamlBt1.Click(winrt::auto_revoke, { this, &MyWindow::OnXamlButtonClick });
         //m_hWndXamlButton1 = wil::unique_hwnd(CreateDesktopWindowsXamlSource(WS_TABSTOP, m_xamlBt1));
 
-        m_mainUserControl = winrt::MyApp::MainUserControl();
+        /*m_mainUserControl = winrt::MyApp::MainUserControl();
         m_hWndXamlIsland = wil::unique_hwnd(CreateDesktopWindowsXamlSource(WS_TABSTOP, m_mainUserControl));
+		*/
+		m_todosFeed = winrt::MyApp::TodosFeed();
+        m_hWndXamlIsland = wil::unique_hwnd(CreateDesktopWindowsXamlSource(WS_TABSTOP, m_todosFeed));
 
         m_hButton2 = wil::unique_hwnd(CreateWindow(TEXT("button"), TEXT("Button &2"),
             WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON | WS_TABSTOP,
@@ -175,7 +179,10 @@ private:
 
     void OnXamlButtonClick(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&)
     {
-        m_mainUserControl.MyProperty(winrt::hstring(L"Xaml K Button 1"));
+		if (m_mainUserControl)
+		{
+			m_mainUserControl.MyProperty(winrt::hstring(L"Xaml K Button 1"));
+		}
     }
 };
 
